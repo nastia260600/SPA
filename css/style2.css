@@ -1,0 +1,328 @@
+* { margin: 0; padding: 0; text-decoration: none; font-size: 1em; outline: none; }
+code, kbd, samp, pre, tt, var, textarea, input, select, isindex, listing, xmp, plaintext {
+    font: inherit; font-size: 1em; white-space: normal; }
+dfn, i, cite, var, address, em { font-style: normal; }
+th, b, strong, h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+a, img, a img, iframe, form, fieldset, abbr, acronym, object, applet, table {
+    border: none;}
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th, td, center { text-align: left; vertical-align: top; }
+body { line-height: 1; background: white; color: black; }
+q { quotes: "" ""; }
+ul, ol, dir, menu { list-style: none; }
+sub, sup { vertical-align: baseline; }
+a { color: inherit; }
+hr { display: none; } /* we don't need a visual hr in layout */
+/* disables some nasty font attributes in standard browsers */
+font { color: inherit !important; font: inherit !important; color: inherit !important; }
+marquee { overflow: inherit !important; -moz-binding: none; }
+blink { text-decoration: none; }
+nobr { white-space: normal; }
+
+
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('../fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/roboto-v20-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('../fonts/roboto-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/roboto-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/roboto-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto-v20-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+
+
+/* MEDIA */
+
+@media(max-width: 767px){
+    .slider__row{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+/* Styles start */
+
+html{
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 35px;
+    font-weight: normal;
+    color: #5C5F64;
+}
+.wrapper{
+    min-height: 100%;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    max-width: 1170px ;
+    margin: 0px auto;
+}
+.header{
+    background-color: #FFFFFF;
+    /*padding: 0px 0;*/
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);/*не работає чогось, потом розберусь why*/
+    height: 95px;
+    /*position: fixed; ламає чогось верстку*/
+}
+.header__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;/*працює но не як надо*/
+}
+.header__list li{
+    display: inline-flex;
+    line-height: 16px;
+    padding: 0 0 0 20px;
+}
+.header__search{
+    background: linear-gradient(270deg, #01C089 0%, #00A958 100%);
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    border: 0;
+    line-height: 16px;
+    color: #FFFFFF;
+    /*width: 136px;*/
+    /*height: 36px;*/
+    padding: 10px 15px 10px 20px;
+}
+.header__search-icon{
+    margin-right: 10px;
+}
+.header__search-link{
+    text-decoration: none;
+}
+.landing{
+    background-image: url("../img/background.png");
+}
+.landing__row{
+    display: flex;
+    /*justify-content: space-between;*/
+}
+.landing__body{
+    /*padding: 0px 0;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 980px;
+
+    /*спорнее рішення*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    /*margin: 0 auto;*/
+}
+.landing__title{
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+    color: #151F2F;
+    text-shadow: 0px 0px 29px #FFFFFF;
+}
+.landing__title-explore{
+    color: #01C089;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+    text-shadow: 0px 0px 29px #FFFFFF;
+}
+.landing__text{
+    font-size: 20px;
+    color: #5C5F64;
+    text-shadow: 0px 0px 10px #FFFFFF;
+    margin-bottom: 23px;
+}
+.landing__search{
+    /*justify-content: center;*/
+    text-align: center;
+    background: linear-gradient(90deg, #F86B6A 0%, #FD954E 100%);
+    /*box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.19);*/
+    padding: 12px 57px;
+    border: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.landing__img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.textWave__row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textWave__title{
+    font-weight: bold;
+    font-size: 30px;
+    color: #151F2F;
+}
+.slider__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*flex-wrap: wrap;* почєму при цій фігні не працює врап в медіа, шок */
+}
+.slider__column{
+    max-height: 300px;
+    /*overflow: hidden;*/
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin: 5px 15px 10px 15px;
+}
+.slider__img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider__location{
+    color: grey;
+    padding: 5px 0 0 15px;
+    font-size: 1em;
+}
+.slider__name{
+    padding: 5px 0 0 15px;
+}
+.slider__calendar{
+    padding: 5px 0 0 15px;
+}
+.slider_nick{
+    padding: 5px 0 0 15px;
+}
+
+/*це блоки з фотіками and text, було впадлу робити по бему, бо я лінива жопа*/
+.main__body{
+    /*text-align: center; не то*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /*без цього в моб краще, но ето надо*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 332px;
+    /*max-width: 600px;*/
+}
+.main__img{
+    max-height: 375px;
+    max-width: 571px;
+}
+.main__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main__title{
+    font-weight: bold;
+    font-size: 30px;
+    color: #151F2F;
+
+    margin-bottom: 15px;
+}
+.main__text{
+    line-height: 26px;
+    color: #5C5F64;
+    margin-bottom: 10px;
+}
+.main__first{
+    background: linear-gradient(270deg, #01C089 0%, #00A958 100%);
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    border: 0;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    width: 162px;
+    height: 36px;
+
+}
+.main__second{
+    background: linear-gradient(90deg, #F86B6A 0%, #FD954E 100%);
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    border: 0;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    width: 141px;
+    height: 36px;
+}
+/*це 2 блока безпонтових центрових маін1 і маін 2*/
+.main1__row{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+}
+.main1__button{
+    /*width: 162px;*/
+    /*height: 36px;*/
+}
+.main2__row{
+    display: flex;
+    flex-direction: row;
+}
+.main2__button{
+    /*width: 141px;*/
+    /*height: 36px;*/
+    /*text-align: center*/
+}
+.footer{
+    max-height: 545px;
+    /*padding-bottom: 100px;*/
+    padding-top: 10px; /* не осуждай мене*/
+}
+.footer__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*flex: 1 1 auto;*/
+}
+.footer__logo{
+    /*max-height: 123px;*/
+}
+.footer__logo img{
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+}
+.footer__title{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+}
+.footer__list{
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+}
